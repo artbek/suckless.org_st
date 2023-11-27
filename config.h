@@ -4,8 +4,9 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Ubuntu Mono:pixelsize=17:antialias=true:autohint=true";
-static int borderpx = 2;
+static char *font = "monospace:pixelsize=18:antialias=false:autohint=true:fixed=true";
+
+static int borderpx = 8;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -26,14 +27,14 @@ char *vtiden = "\033[?6c";
 
 /* Kerning / character bounding-box multipliers */
 static float cwscale = 1.0;
-static float chscale = 1.3;
+static float chscale = 1.2;
 
 /*
  * word delimiter string
  *
  * More advanced example: L" `'\"()[]{}"
  */
-wchar_t *worddelimiters = L" ";
+wchar_t *worddelimiters = L" `'\"()[]{}<>,:;=";
 
 /* selection timeouts (in milliseconds) */
 static unsigned int doubleclicktimeout = 300;
@@ -73,7 +74,7 @@ static unsigned int cursorthickness = 2;
 static int bellvolume = 0;
 
 /* default TERM value */
-char *termname = "st-256color";
+char *termname = "xterm-256color";
 
 /*
  * spaces per tab
@@ -95,32 +96,31 @@ unsigned int tabspaces = 8;
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
+	"#282a2e",
+	"#a54242",
+	"#8c9440",
+	"#de935f",
+	"#5f819d",
+	"#85678f",
+	"#5e8d87",
+	"#cccccc",
 
 	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
+	"#373b41",
+	"#cc6666",
+	"#b5bd68",
+	"#f0c674",
+	"#81a2be",
+	"#b294bb",
+	"#8abeb7",
+	"#c5c8c6",
 
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
-	"#555555",
+	"#c5c8c6",
+	"#1d1f21",
 };
-
 
 /*
  * Default colors (colorname index)
